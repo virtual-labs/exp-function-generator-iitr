@@ -1,13 +1,205 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
+  <meta charset="UTF-8">
+  <meta name="description" content="EMF Generation">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <title>Function Generator</title>
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+  <script src="graph.ob.js"></script>
+  <script src="graph_use.ob.js"></script>
+  <script src="graph_use2.ob.js"></script>
+  <link rel="stylesheet" href="demo1.css">
+    
+  <style type="text/css">
+  body {
+    background-color: #ECEFF4 ;
+
+}
+
+
+h1 {
+    color: maroon;
+  
+} 
+
+   #wrapper {
+  width:100%;
+}
+
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #3e8e41;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    background-color: linen;
+    min-width: 750px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+.dropdown-content a {
+    color: red;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+
+
+</style>
+</head>
+<body outline:black;>
+
+<center>
+<h1><u>Function Generator</u></h1>
+</center>
+<br/>
+
+
+<div class="dropdown" style="left:40px;">
+<button onclick="dropdown()" class="dropbtn">Instructions</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#home"><b>1) Connect L4 with L8.</b><br/><br/>
+                    <b>2) For square wave, connect L1 with L5.</b><br/><br/>
+                    <b>3) For triangular wave, connect L2 with L6. </b><br/><br/>
+                    <b>4) For sine wave, connect L3 with L7. </b><br/><br/>
+                    <b>5) Click on "check" button to observe the waveforms.</b><br/><br/>
+                    
+                    
+                   
+                    
+ </a>
+</div>
+</div>
+
+<div class="jtk-demo-main" >
+            <div class="jtk-demo-canvas canvas-wide animation-demo jtk-surface jtk-surface-nopan" id="canvas">
+                <div class="littledot" id="ld1"><br><a href="#" class="cmdLink detach" rel="ld1">L<sub>1</sub></a></div>
+                <div class="littledot" id="ld2"><br><a href="#" class="cmdLink detach" rel="ld2">L<sub>2</sub></a></div>
+                <div class="littledot" id="ld3"><br><a href="#" class="cmdLink detach" rel="ld3">L<sub>3</sub></a></div>
+                <div class="littledot" id="ld4"><br><a href="#" class="cmdLink detach" rel="ld4">l<sub>4</sub></a></div>
+                <div class="littledot" id="ld5"><br><a href="#" class="cmdLink detach" rel="ld5">L<sub>5</sub></a></div>
+                <div class="littledot" id="ld6"><br><a href="#" class="cmdLink detach" rel="ld6">L<sub>6</sub></a></div>
+                <div class="littledot" id="ld7"><br><a href="#" class="cmdLink detach" rel="ld7">L<sub>7</sub></a></div>
+                <div class="littledot" id="ld8"><br><a href="#" class="cmdLink detach" rel="ld8">l<sub>8</sub></a></div>
+        </div>
+
+<div id="wrapper" style="position:absolute; border: 2px solid; top: 160px; ;width:1200px;height:1400px;left:20px">
+  <div style="position:absolute;left:20px;top:500px;" >
+
+   </div>
+
+
+
+<div style="position:absolute;top:50px; left:50px;"  >
+
+<img src="circuit.png" alt="" style="position: relative; width: 900px; height:450px">
+<img src="ext.png" alt="" style="position: relative; top: -250px; left: 124px;">
+<img src="ext.png" alt=""style="position: relative; top:-50px; left: 50px;">
+  </div>
+  
+
+<div style="position:absolute;left:230px;top:550px;">
+            <button id="check-button" >Check</button>
+            <input id="reset" type="reset" onclick="window.location.href = 'index.html';" value="Reset"><br>       </div>
+          <div style="position: relative; top:700px; left:100px;">
+          
+       
+          <table border="2px">
+            
+            <tr><td> Amplitute &nbsp;:</td><td>  <input type="range" min="1" max="50" step="1" value="10" id="P1" onclick="cal()" data-rangeSlider>&nbsp;<output></output></td></tr>
+            
+            
+            <tr><td> Frequency&nbsp;:</td><td><input type="range" min="0.1" max="3.14" step="0.1" value="1" id="P2" onclick="cal()" data-rangeSlider>
+              &nbsp; <output></output>&nbsp;Hz</td></tr>
+            
+            
+            <tr><td> Phase &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td><td> <input type="range" min="1" max="360" step="1" value="90" id="P3" onclick="cal()" data-rangeSlider>
+              &nbsp; <output></output><sup>o</sup></td></tr>
+            
+            
+            </table>
+             
+              <div>
+              
+      
+         
+          <div id="grpwrap" style="position:absolute;border: 2px solid #3385ff; top:-100px; width:500px; height:700px; left:550px">
+            <div style="position:absolute; font-size:16px;background-color: #3385ff;  top:0px;left:0px; width:500px; height:50px;font-weight: bold;"><p style="text-align:center; color:white"> <b> GRAPH PLOT</b></p>
+
+
+
+ 
+      <canvas id="C1" width="500px" height="650px"></canvas>
+
+
+</div>
+<script>
+  (function () {
+
+    var selector = '[data-rangeSlider]',
+      elements = document.querySelectorAll(selector);
+
+    // Example functionality to demonstrate a value feedback
+    function valueOutput(element) {
+      var value = element.value,
+        output = element.parentNode.getElementsByTagName('output')[0];
+      output.innerHTML = value;
+    }
+
+    for (var i = elements.length - 1; i >= 0; i--) {
+      valueOutput(elements[i]);
+    }
+
+    Array.prototype.slice.call(document.querySelectorAll('input[type="range"]')).forEach(function (el) {
+      el.addEventListener('input', function (e) {
+        valueOutput(e.target);
+      }, false);
+    });
+
+  })();
+</script>
+
+
+ <script>  
+
+   document.getElementById('P1').disabled = true;
+   document.getElementById('P2').disabled = true;
+   document.getElementById('P3').disabled = true;
+  
+  
+  </script> 
+ 
+<script src="jsplumb1.js"></script>
+<script src="function.js"></script>
+
+    <script src="demo1.js"></script>   
+	</div>
 </body>
+
 </html>
+
