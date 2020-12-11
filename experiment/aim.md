@@ -1,1 +1,1 @@
-### Aim of the experiment
+#### To analyse Function generator using operational amplifier (sine, triangular and square wave).
