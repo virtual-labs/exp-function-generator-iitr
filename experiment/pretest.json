@@ -1,1 +1,46 @@
-[{"question":"The signal generator generally used in the laboratories is ________ oscillator","answers":{"a":"Crystal","b":"Hartley","c":"Phase Shift","d":"Wien-bridge"},"correctAnswer":"d"},{"question":"Which among the following op-amp is chosen for generating triangular wave of relatively higher frequency?","answers":{"a":"LM741 op-amp","b":"LM301 op-amp","c":"LM1458 op-amp","d":"LM3530 op-amp"},"correctAnswer":"b"},{"question":"Output of an integrator producing waveforms of unequal rise and fall time are called","answers":{"a":"Triangular waveform","b":"Sawtooth waveform","c":"Pulsating waveform","d":"Spiked waveform"},"correctAnswer":"b"},{"question":"Why zener diode is used at the output terminal of square wave generator?","answers":{"a":"To reduce both output and capacitor voltage swing","b":"To reduce output voltage swing","c":"To reduce input voltage swing","d":"To reduce input voltage swing"},"correctAnswer":"b"},{"question":"Modulation level can be adjusted in R.F. signal generator upto","answers":{"a":"100%","b":"90%","c":"95","d":"80"},"correctAnswer":"c"}]
+[{
+	"question": "The signal generator generally used in the laboratories is ________ oscillator",
+	"answers": {
+		"a": "Crystal",
+		"b": "Hartley",
+		"c": "Phase Shift",
+		"d": "Wien-bridge"
+	},
+	"correctAnswer": "d"
+}, {
+	"question": "Which among the following op-amp is chosen for generating triangular wave of relatively higher frequency?",
+	"answers": {
+		"a": "LM741 op-amp",
+		"b": "LM301 op-amp",
+		"c": "LM1458 op-amp",
+		"d": "LM3530 op-amp"
+	},
+	"correctAnswer": "b"
+}, {
+	"question": "Output of an integrator producing waveforms of unequal rise and fall time are called",
+	"answers": {
+		"a": "Triangular waveform",
+		"b": "Sawtooth waveform",
+		"c": "Pulsating waveform",
+		"d": "Spiked waveform"
+	},
+	"correctAnswer": "b"
+}, {
+	"question": "Why zener diode is used at the output terminal of square wave generator?",
+	"answers": {
+		"a": "To reduce both output and capacitor voltage swing",
+		"b": "To reduce output voltage swing",
+		"c": "To reduce input voltage swing",
+		"d": "To reduce input voltage swing"
+	},
+	"correctAnswer": "b"
+}, {
+	"question": "Modulation level can be adjusted in R.F. signal generator upto",
+	"answers": {
+		"a": "100%",
+		"b": "90%",
+		"c": "95",
+		"d": "80"
+	},
+	"correctAnswer": "c"
+}]
