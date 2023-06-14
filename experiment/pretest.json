@@ -1,5 +1,5 @@
 [{
-	"question": "The signal generator generally used in the laboratories is ________ oscillator",
+	"question": "The signal generator generally used in the laboratories is________oscillator.",
 	"answers": {
 		"a": "Crystal",
 		"b": "Hartley",
@@ -17,30 +17,30 @@
 	},
 	"correctAnswer": "b"
 }, {
-	"question": "Output of an integrator producing waveforms of unequal rise and fall time are called",
+	"question": "Output of an integrator producing waveforms of unequal rise and fall time are called_______.",
 	"answers": {
 		"a": "Triangular waveform",
-		"b": "Sawtooth waveform",
-		"c": "Pulsating waveform",
+		"b": "Pulsating waveform",
+		"c": "Sawtooth waveform",
 		"d": "Spiked waveform"
 	},
-	"correctAnswer": "b"
+	"correctAnswer": "c"
 }, {
 	"question": "Why zener diode is used at the output terminal of square wave generator?",
 	"answers": {
-		"a": "To reduce both output and capacitor voltage swing",
-		"b": "To reduce output voltage swing",
+		"a": "To reduce output voltage swing",
+		"b": "To reduce both output and capacitor voltage swing",
 		"c": "To reduce input voltage swing",
-		"d": "To reduce input voltage swing"
+		"d": "None of the above"
 	},
-	"correctAnswer": "b"
+	"correctAnswer": "a"
 }, {
-	"question": "Modulation level can be adjusted in R.F. signal generator upto",
+	"question": "Modulation level can be adjusted in R.F. signal generator upto_______.",
 	"answers": {
 		"a": "100%",
 		"b": "90%",
-		"c": "95",
-		"d": "80"
+		"c": "95%",
+		"d": "80%"
 	},
 	"correctAnswer": "c"
 }]

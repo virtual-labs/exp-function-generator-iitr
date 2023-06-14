@@ -1,0 +1,297 @@
+<html>
+
+<head>
+	<title>Function Generator Using
+		Operational Amplifier</title>
+	<meta charset="windows-1252">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="./src/expstyle.css">
+	<!---------MathJax------------------->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+	<!------------calculator----------------------------------------->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+	<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Knob/1.2.13/jquery.knob.min.js"></script-->
+
+	<script src="./src/exp4axis.js"></script>
+	<script src="./src/sinewave.js"></script>
+	<script src="./src/exp4.js"></script>
+	<script src="./src/exp4both.js"></script>
+	<script src="./src/exp4gnd.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+		crossorigin="anonymous"></script> -->
+</head>
+
+<body bgcolor="white">
+
+	 
+	<div class="wholebody">
+		<div id="se-pre-con">
+			<div class="load">
+				<!-- <p>You can read the values of the experiment</p> -->
+				<img src="./images/load.gif"></img>
+				<p>Please wait...</p>
+			</div>
+		</div>
+		<p style="background-color: #044ca3;margin-top:0em;color:white;font-size:30px;text-align:center">Function
+			Generator Using Operational Amplifier</p>
+		<a id="myBtn" href="#" style="position: absolute;left: 92%;"><button id="myBtn" class="btn btn-danger" style="    margin-top: -20px;
+				font-size: 17px;
+				height: 35px;
+				background: #dc3545;
+				border: 1px solid #dc3545;
+				color: white;
+				border-radius: 5px;">Instructions</button></a>
+
+		<!-- <div id="description">
+			<div class="dropdown">
+				<p style="padding-right:350px;color:white"> INSTRUCTIONS</p>
+				<div class="dropdown-content">
+					<ol type="1">
+						<li>Click on 'Power:Off' button to start the experiment.</li>
+						<li>Vary the Amplitude, Frequency, Phase using the range sliders.</li>
+						<li>Click on 'Dual' button to observe all the three waveforms.</li>
+						<li>Channel 1 shows the sine waveform, Channel 2 shows the triangle waveform and Channel 3 shows
+							the square waveform. </li>
+						<li>You can also position the waveforms on the graph using the positioning range sliders. </li>
+					</ol>
+				</div>
+			</div>
+		</div> -->
+		<div style="position:relative;top:48em;left:0em;color:white;background-color: #044ca3;width: 100.1%;text-align: center;height: 33px;
+		padding: 0px;"><p style="padding-top: 6px;">Copyright&copy;2019 | Lab developed by Virtual Labs, IIT Roorkee</p>
+			</div><br>
+		<div class="instruct">
+			<!-- <a id="myBtn" href="#"><img src="./images/help.png" width="30" height="30" alt="Help"></a> -->
+			<div id="myModal" class="modal">
+				<div class="modal-content" style="position: absolute;
+				width: 66%;
+				left: 2%;">
+					<div class="modal-header">
+						<span class="close">&times;</span>
+						<h2>Instructions</h2>
+					</div>
+					<div class="modal-body">
+						<br>
+						<left style="font-size:20px"><h3>Instructions:</h3></left>
+						<ol type="1" >
+							<li>Click on 'Power Off' button to start the experiment.</li><br>
+							<li>Vary the Amplitude, Frequency, Phase using the range sliders.</li><br>
+							<li>Click on 'Dual' button to observe all the three waveforms.</li><br>
+							<li>'Channel' 1 shows the sine waveform, 'Channel 2' shows the triangle waveform and 'Channel 3'
+								shows
+								the square waveform. </li><br>
+							<li>You can also position the waveforms on the graph using the positioning range sliders.
+							</li><br>
+						</ol>
+						<hr>
+					</div>
+					<div class="modal-footer">
+						<br />
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="grpwrap">
+
+			<div
+				style="position:absolute; font-size:16px; top:-1px;left:0px;  height:50px;background-color:#044ca3;  width:572px;font-weight: bold;">
+				<p style="text-align:center;padding-right:370px;color:white"> <b style="padding-left: 206px;
+					font-size: 20px;"> OSCILLOSCOPE</b></p>
+			</div>
+
+			<div class="canvas2d-view" id="canvas2d-view">
+
+				<center><canvas id="mycanvas" width="450" height="380" style="border:1px solid black;top:40px;">
+					</canvas> </center>
+			</div>
+			<!--  <output id="out"></output>-->
+			<div class="lowerleftsection">
+
+				<input type="button" id="chhn1" value="Channel 1" onclick="chnl1()" disabled="true" />
+				<input type="button" id="chhn2" value="Channel 2" onclick="chnl2()" disabled="true" />
+				<input type="button" id="chhn3" value="Channel 3" onclick="chnl3()" disabled="true" />
+				<input type="button" id="grnd" value="Ground" onclick="grnds()" disabled="true" />
+				<input type="button" id="dual" value="Dual" onclick="bthd()" disabled="true" />
+				<input type="button" id="add" value="Add" onclick="insert()" disabled="true" />
+				<label id="lp1">Amplitude</label><input type="range" id="P1" min=1 max=20 step=1 value=10
+					oninput="updateTextBox1(this.value);bthd();" />
+				<input type="text" id="t1" style="position: absolute;width: 3.5em;top: 5em;left: 19em;">
+				<label id="lp2">Frequency</label><input type="range" id="P2" min=0.1 max=3.14 step=0.1 value=1
+					oninput="updateTextBox2(this.value);bthd();" />
+				<input type="text" id="t2" style="position: absolute;width: 3.5em;top: 7.3em;left: 19em;">
+				<label id="lp3">Phase</label><input type="range" id="P3" min=1 max=360 step=1 value=90
+					oninput="updateTextBox3(this.value);bthd();" />
+				<input type="text" id="t3" style="position: absolute;top: 9.7em;width: 3.5em;left: 19em;">
+				<input type="button" id="onff" onclick="mainswt()" value="Power:Off" style="
+    position: relative;
+    float: right;
+    right: 20px;
+    top: 47px;
+    color: white;
+    background-color: red;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px #999;
+    " />
+				<!--------------- end of .knob-container-fng----------------------->
+
+			</div><!--------------- end of .lowerleftsection----------------------->
+
+		</div><!--------------- end of .graphSection----------------------->
+
+		<div id="circuitsection">
+			<div
+				style="position:absolute; font-size:16px; top:0px;right:-1px;  height:50px;background-color:#044ca3;  width:651px;font-weight: bold;">
+				<p style="padding-right:390px;color:white"> <b style="padding-left: 296px;
+					font-size: 20px;"> CIRCUIT </b></p>
+			</div>
+
+			<div id="circuit">
+				<p>
+					<img src="./images/setup.png" style="width:607px;height:265px;position:absolute;right:27px" />
+				</p>
+			</div><!--------------- end of .circuit----------------------->
+		</div> <!--------------- end of .circuitSection----------------------->
+		<div id="controller">
+			<div id="cntrlr"
+				style="position:absolute; background-color:#044ca3;   height:53px; top:-1px; right:-1px; width:651px;font-size: 16px;font-weight: bold;">
+				<p style="text-align:center;padding-right:370px;color:white;"><b style="padding-left: 280px;
+					font-size: 20px;">CONTROLS</b></p>
+			</div>
+
+			<div class="middlerightmiddle">
+				<!--------------- end of .knob-container-amp----------------------->
+
+				<input type="range" orient="vertical" id="positiony1" min="-2" max="2" value="0" oninput="posiy1chnge()"
+					style="cursor:pointer;"> <label id="positnlabely1">Position-Y1</label><label
+					id="positnlabelch1">Channel 1</label>
+				<input type="range" orient="vertical" id="positiony2" min="-2" max="2" value="0" oninput="posiy2chnge()"
+					style="cursor:pointer;"> <label id="positnlabely2">Position-Y2 Channel 2</label><label
+					id="positnlabelch2">  </label>
+				<input type="range" orient="vertical" id="positiony3" min="-2" max="2" value="0" oninput="posiy3chnge()"
+					style="cursor:pointer;"> <label id="positnlabely3">Position-Y3</label><label
+					id="positnlabelch3">Channel 3</label>
+
+
+			</div> <!--------------- end of .middlerightmiddle----------------------->
+			<!--------------- end of .middlerightupper--------------------->
+		</div> <!--------------- end of .controllSection----------------------->
+		<!--------------- end of .calcln----------------------->
+		<!-- <div class="calc">
+			<table cellspacing="0" cellpadding="10" border="2 solid black" id="table">
+				<tr style="color:white;background-color:#044ca3;height:40px">
+					<th colspan=6>EXPERIMENTAL READINGS</th>
+				</tr>
+				<tr bgcolor="#ffffff" class="font">
+					<th align=center>Sl.No</th>
+					<th align=center>V<sub>in</sub> (V)</th>
+					<th align=center>V<sub>o</sub> (V)</th>
+					<th align=center>Gain (dB)</th>
+				</tr>
+			</table>
+		</div> -->
+
+		<!-- <div style="bottom: 4em;left: 41em;position: absolute;">
+			<button class="button" id="button1" onclick="printf()">Export Data</button><br />
+		</div> -->
+	</div><!--------------- end of .wholebody----------------------->
+
+	<script>
+		var t = 0;
+		$('canvas').data('readonly', false);
+		$(window).load(function () {
+			// Animate loader off screen
+			$("#se-pre-con").animate({
+				top: -900
+			}, 4000);
+			t = 1;
+		});
+		var i = 2;
+		var count = 1;
+		var l1 = [];
+		var l2 = [];
+		function plot() {
+			var bttn = document.getElementById('onff').value;
+			if (bttn == "Power:Off") { alert("Could not plot if power is off\nTo add please turn on the system"); }
+			else {
+				var ctx = document.getElementById("canvas").getContext('2d');
+				var len1 = l1.length;
+
+				for (var i = 0; i < len1; i++) {
+					for (var j = i + 1; j < len1; j++) {
+						if (parseFloat(l1[i]) > parseFloat(l1[j])) {
+							var temp = l1[i];
+							l1[i] = l1[j];
+							l1[j] = temp;
+							temp = l2[i];
+							l2[i] = l2[j];
+							l2[j] = temp;
+						}
+					}
+				}
+				var chart = new Chart(ctx, {
+					type: 'line',
+					data: {
+						labels: l1,
+						datasets: [{
+							label: "Input Voltage vs Output Voltage",
+							borderColor: '#000000',
+							data: l1,
+						}]
+					}
+				});
+			}
+		}
+		var modal = document.getElementById("myModal");
+
+		// Get the button that opens the modal
+		var btn = document.getElementById("myBtn");
+
+		// Get the <span> element that closes the modal
+		var span = document.getElementsByClassName("close")[0];
+
+		// When the user clicks the button, open the modal 
+		btn.onclick = function () {
+			modal.style.display = "block";
+		}
+
+		// When the user clicks on <span> (x), close the modal
+		span.onclick = function () {
+			modal.style.display = "none";
+		}
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function (event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+
+		function printf() {
+			if (t) document.getElementById("se-pre-con").remove();
+			t = 0;
+			window.print();
+		}
+		function updateTextBox1(val) {
+			document.getElementById("t1").value = val + "V";
+		}
+		function updateTextBox2(val) {
+			document.getElementById("t2").value = val + "Hz";
+		}
+		function updateTextBox3(val) {
+			document.getElementById("t3").value = val + "\xB0";
+		}
+	</script>
+
+</body>
+
+</html>
