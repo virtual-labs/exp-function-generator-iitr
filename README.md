@@ -6,7 +6,7 @@
 <b>Discipline | <b> Electronics and Communications 
 :--|:--|
 <b> Lab | <b> Analog Electronics
-<b> Experiment|     <b> 7. Function generator using operational amplifier (sine, triangular & square wave)
+<b> Experiment|     <b> 6. Function generator using operational amplifier (sine, triangular & square wave)
 
 <h5> About the Experiment : </h5> <br>
 
