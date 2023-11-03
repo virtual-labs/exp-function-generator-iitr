@@ -119,7 +119,7 @@
                 isSource: true,
                 scope: "green",
                 connectorStyle: { stroke: "red", strokeWidth: 5 },
-                connector: ["Bezier", { curviness: -10 } ],
+                connector: ["Bezier", { curviness: -40 } ],
                 maxConnections:1 ,
                 isTarget: true,
                 dropOptions: exampleDropOptions
