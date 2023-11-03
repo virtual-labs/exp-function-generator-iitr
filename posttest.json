@@ -1,0 +1,46 @@
+[{
+	"question": "X-Y recorders is the type of",
+	"answers": {
+		"a": "Graphic recorders",
+		"b": "Oscillographic recorders",
+		"c": "Magnetic tape recorders",
+		"d": "Digital recorders"
+	},
+	"correctAnswer": "a"
+}, {
+	"question": "Depending on whether the display is a numeric or alphanumeric, the segmental displays is",
+	"answers": {
+		"a": "7 segmental",
+		"b": "14 segmental",
+		"c": "21 segmental",
+		"d": "Both a and b"
+	},
+	"correctAnswer": "d"
+}, {
+	"question": "A square wave oscillator has fo = 1Khz. Assume the resistor value to be 10kΩ and find the capacitor value?",
+	"answers": {
+		"a": "3.9 µF",
+		"b": "0.3 µF",
+		"c": "0.05 µF",
+		"d": "2 µF"
+	},
+	"correctAnswer": "c"
+}, {
+	"question": "Triangular wave form has",
+	"answers": {
+		"a": "Rise time < fall time",
+		"b": "Rise time = fall time",
+		"c": "Rise time ≥ fall time",
+		"d": "None of the above"
+	},
+	"correctAnswer": "b"
+}, {
+	"question": "The principal circuit of an AF signal generator is a",
+	"answers": {
+		"a": "Constant frequency audio oscillator",
+		"b": "Variable frequency audio oscillator",
+		"c": "Variable frequency radio oscillator",
+		"d": "None of the above"
+	},
+	"correctAnswer": "b"
+}]
